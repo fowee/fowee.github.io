@@ -1,4 +1,4 @@
 function sayHello ()
 {
-    console.tag('Hello world!');
+    console.log('Hello world!');
 }
