@@ -40,7 +40,8 @@ h6, .h6 {
 
 .blog-masthead {
   margin-bottom: 3rem;
-  background-color: #428bca;
+ /*background-color: #428bca;*/
+ background-color: #fffbca;
   -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
           box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
 }
@@ -163,4 +164,11 @@ h6, .h6 {
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+.blog-row {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
 }
