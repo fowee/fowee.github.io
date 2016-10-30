@@ -13,7 +13,7 @@ var td = new Array(),      //保存每个格子的地鼠
 function GameOver(){
     timeStop();
     playing = false;
-    clearMouse();
+    clearMouse();           //清除老鼠
     alert("游戏结束！\n你获得的分数为："+score+"\n命中率为："+success);
     success = 0;
     score = 0;
