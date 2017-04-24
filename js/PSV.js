@@ -1,22 +1,26 @@
 var i = false;        //show_or_hide 控制变量
 var isPhone = false;
-//平台、设备和操作系统
-var system = {
-    win: false,
-    mac: false,
-    xll: false
+//检测平台,若是android & ios访问就开启陀螺仪
+function checkClinetModel() {
+    //获取请求头中的userAgent
+    var u = navigator.userAgent;
+    //是否是android浏览器
+    var isAndroid = u.indexOf('Android') > -1;
+    //是否是ios浏览器
+    var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    var msg = '';
+    if (isAndroid) {
+        isPhone = true;   //android
+        console.log('android');
+    } else if (isIos) {
+        isPhone = true;   //ios
+        console.log('ios');
+    } else {
+        isPhone = false;  //PC
+        console.log('PC');
+    };
 };
-//检测平台
-var p = navigator.platform;
-system.win = p.indexOf("Win") == 0;
-system.mac = p.indexOf("Mac") == 0;
-system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-//如果是手机访问就开启陀螺仪
-if (system.win || system.mac || system.xll) {
-    isPhone = false;  //是PC
-} else {
-    isPhone = true;   //是手机
-}
+checkClinetModel();
 var PSV = new PhotoSphereViewer({
     autoload: true,
     panorama: 'text.jpg',
