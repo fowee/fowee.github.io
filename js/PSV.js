@@ -1,4 +1,22 @@
 var i = false;        //show_or_hide 控制变量
+var isPhone = false;
+//平台、设备和操作系统
+var system = {
+    win: false,
+    mac: false,
+    xll: false
+};
+//检测平台
+var p = navigator.platform;
+system.win = p.indexOf("Win") == 0;
+system.mac = p.indexOf("Mac") == 0;
+system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+//如果是手机访问就开启陀螺仪
+if (system.win || system.mac || system.xll) {
+    isPhone = false;  //是PC
+} else {
+    isPhone = true;   //是手机
+}
 var PSV = new PhotoSphereViewer({
     autoload: true,
     panorama: 'text.jpg',
@@ -210,6 +228,7 @@ function changeToDT() {
                 latitude: -Math.PI / 16,
                 longitude: 1 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 //典藏
@@ -229,6 +248,7 @@ function changeToDC() {
                 latitude: - Math.PI / 16,
                 longitude: 11 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 function changeToDC0() {
@@ -255,6 +275,7 @@ function changeToDC0() {
                 latitude: - Math.PI / 16,
                 longitude: -5 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 //二展
@@ -290,6 +311,7 @@ function changeToEZ() {
                 latitude: -Math.PI / 16,
                 longitude: 3 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 function changeToEZ0() {
@@ -316,6 +338,7 @@ function changeToEZ0() {
                 latitude: -Math.PI / 16,
                 longitude: 7 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 function changeToEZ2() {
@@ -334,6 +357,7 @@ function changeToEZ2() {
                 latitude: -Math.PI / 16,
                 longitude: 4 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 //钱币
@@ -353,6 +377,7 @@ function changeToQB() {
                 latitude: -Math.PI / 16,
                 longitude: 9 * Math.PI / 32
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 
@@ -373,6 +398,7 @@ function changeToFX() {
                 latitude: -Math.PI / 16,
                 longitude: 18 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 
@@ -393,6 +419,7 @@ function changeToSH() {
                 latitude: -Math.PI / 16,
                 longitude: -9 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 function changeToSH2() {
@@ -419,6 +446,7 @@ function changeToSH2() {
                 latitude: -Math.PI / 16,
                 longitude: 18 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 function changeToSH3() {
@@ -453,6 +481,7 @@ function changeToSH3() {
                 latitude: -Math.PI / 16,
                 longitude: -5 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 //走廊
@@ -488,6 +517,7 @@ function changeToZL0() {
                 latitude: -Math.PI / 16,
                 longitude: 7 * Math.PI / 16
             });
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
 function changeToZL1() {
@@ -530,6 +560,6 @@ function changeToZL1() {
                 latitude: -2 * Math.PI / 16,
                 longitude: 17 * Math.PI / 16
             });
-            // PSV.startGyroscopeControl();    //陀螺仪
+            if (isPhone) PSV.startGyroscopeControl();
         });
 }
