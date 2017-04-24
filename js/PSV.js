@@ -44,9 +44,9 @@ var PSV = new PhotoSphereViewer({
         },
         {
             id: 'qb',
-            title: '钱币展区',
+            title: '书法展区',
             className: 'custom-button2',
-            content: '钱币',
+            content: '书法',
             onClick: function () {
                 changeToQB();
             }
@@ -69,35 +69,11 @@ var PSV = new PhotoSphereViewer({
                 changeToSH();
             }
         },
-
-        //   {
-        //     title: 'Change image',
-        //     className: 'custom-button',
-        //     content: '↻',
-        //     onClick: (function() {
-        //       var i = false;
-        //       return function() {
-        //         i = !i;
-        //         PSV.clearMarkers();
-        //         PSV.setPanorama(i ? 'fx001.jpg' : 'fx001.jpg', {
-        //           longitude: i ? 3.7153696451829257 : 3.8484510006474992,
-        //           latitude: i ? 0.57417649320975916 : -0.24434609527920628
-        //         }, true)
-        //           .then(function() {
-        //             PSV.setCaption(i ? '佛像展示区1 <b>&copy; MCU_电子三庚</b>' : '佛像展示区2 <b>&copy; MCU_电子三庚</b>');
-        //           });
-        //       }
-        //     }())
-        //   },
-
-        // 'spacer-1', //空格
-        'caption',
-        'gyroscope',
-        'fullscreen'
+        'caption', 'gyroscope', 'fullscreen'
     ],
     caption: '欢迎来到艺术中心 <b>&copy; MCU_电子三庚</b>',
-    // longitude_range: [-Math.PI / 2,  Math.PI / 2],   //限制显示范围,longitude_range
-    // latitude_range:  [-Math.PI / 4,  Math.PI / 4],   //限制显示范围,latitude_range
+    longitude_range: [-Math.PI / 2, Math.PI / 2],   //限制显示范围,longitude_range
+    latitude_range: [-Math.PI / 4, Math.PI / 4],   //限制显示范围,latitude_range
     anim_speed: '-1.5rpm',
     default_fov: 50,
     fisheye: true,
@@ -112,24 +88,6 @@ var PSV = new PhotoSphereViewer({
     },
     markers: (function () {      //测试markers
         var a = [];
-        for (var i = 0; i < Math.PI * 2; i += Math.PI / 4) {
-            for (var j = -Math.PI / 2 + Math.PI / 4; j < Math.PI / 2; j += Math.PI / 4) {
-                a.push({
-                    id: '#' + a.length,
-                    tooltip: '#' + a.length,
-                    latitude: j,
-                    longitude: i,
-                    image: 'pin.png',
-                    width: 32,
-                    height: 32,
-                    anchor: 'bottom center',
-                    data: {
-                        deletable: true
-                    }
-                });
-            }
-        }
-
         a.push({
             id: 'the-path',
             name: 'The path',
@@ -141,7 +99,14 @@ var PSV = new PhotoSphereViewer({
             height: 32,
             anchor: 'bottom center'
         });
-
+        a.push({
+            id: 'dt',
+            image: 'point.png',
+            width: 64,
+            height: 64,
+            latitude: -Math.PI / 16,
+            longitude: 0
+        });
         a.push({
             id: 'lorem',
             tooltip: {
@@ -156,150 +121,9 @@ var PSV = new PhotoSphereViewer({
             height: 32,
             anchor: 'bottom center'
         });
-
-        a.push({
-            id: 'gif',
-            image: 'http://strangeplanet.fr/files/avatars/sleep-round.gif',
-            width: 100,
-            height: 100,
-            x: 2060,
-            y: 960
-        });
-
-        a.push({
-            id: 'text',
-            html: 'This <b>is</b> text <img src="pin3.png" style="height: 24px; vertical-align: top;"/>',
-            anchor: 'bottom right',
-            style: {
-                color: 'white',
-                fontSize: '20px',
-                fontFamily: 'Helvetica, sans-serif',
-                textAlign: 'center'
-            },
-            latitude: -0.2,
-            longitude: 0.5
-        });
-
-        a.push({
-            id: 'polygon',
-            content: 'This mountain is so great it has dots on it!',
-            polygon_px: [3184, 794, 3268, 841, 3367, 1194, 3327, 1307, 3065, 1221, 3097, 847],
-            svgStyle: {
-                fill: 'url(#points)', //'rgba(255,0,0,0.3)',
-                stroke: 'rgba(255, 0, 50, 0.8)',
-                'stroke-width': '2px'
-            },
-            tooltip: {
-                content: 'This is a mountain',
-                position: 'right bottom'
-            }
-        });
-
-        a.push({
-            id: 'polygon-sky',
-            svgStyle: {
-                fill: 'rgba(0, 190, 255, 0.1)'
-            },
-            polygon_rad: (function () {
-                var points = [];
-
-                for (var i = 0; i < Math.PI * 2; i += Math.PI / 8) {
-                    points.push(i);
-                    points.push(Math.PI / 8);
-                }
-
-                return points;
-            } ())
-        });
-
-        a.push({
-            id: 'circle',
-            tooltip: 'A circle of radius 30',
-            circle: 30,
-            svgStyle: {
-                fill: 'rgba(255,255,0,0.3)',
-                stroke: 'yellow',
-                'stroke-width': '2px'
-            },
-            longitude: 0,
-            latitude: -0.1,
-            anchor: 'center right'
-        });
-
-        a.push({
-            id: 'ellipse',
-            tooltip: 'An ellipse of radius 60/30',
-            ellipse: [60, 30],
-            svgStyle: {
-                fill: 'rgba(255,255,0,0.3)',
-                stroke: 'yellow',
-                'stroke-width': '2px'
-            },
-            longitude: 0,
-            latitude: -0.1,
-            anchor: 'center left'
-        });
-
-        a.push({
-            id: 'rect',
-            tooltip: 'A square a side 60',
-            rect: [60, 60],
-            svgStyle: {
-                fill: 'rgba(255,255,0,0.3)',
-                stroke: 'yellow',
-                'stroke-width': '2px'
-            },
-            longitude: 0,
-            latitude: -0.2,
-            anchor: 'center right'
-        });
-
-        a.push({
-            id: 'path',
-            tooltip: 'A custom path',
-            path: 'M 0 0 L 60 60 L 60 0 L 0 60 L 0 0',
-            svgStyle: {
-                fill: 'rgba(255,255,0,0.3)',
-                stroke: 'yellow',
-                'stroke-width': '2px'
-            },
-            longitude: 0,
-            latitude: -0.2,
-            anchor: 'center left'
-        });
-
         return a;
     } ())
 });
-
-//自动打开陀螺仪
-// GC();
-// function GC(){
-//  PSV.startGyroscopeControl();
-// }
-
-
-
-show_or_hide();
-PSV.on('click', function (e) {
-    if (e.marker && !e.marker.isPolygon()) {
-        return;
-    }
-    // PSV.addMarker({
-    //     id: '#' + Math.random(),
-    //     tooltip: 'Generated marker',
-    //     longitude: e.longitude,
-    //     latitude: e.latitude,
-    //     image: 'pin.png',
-    //     width: 32,
-    //     height: 32,
-    //     anchor: 'bottom center',
-    //     data: {
-    //         deletable: true
-    //     }
-    // });
-});
-
 PSV.on('select-marker', function (marker) {
     if (marker.data && marker.data.deletable) {
         PSV.removeMarker(marker);
@@ -324,9 +148,30 @@ PSV.on('select-marker', function (marker) {
     else if (marker.id === 'sh') {
         changeToSH();
     }
+    else if (marker.id === 'zl0') {
+        changeToZL0();
+    }
+    else if (marker.id === 'zl1') {
+        changeToZL1();
+    }
+    else if (marker.id === 'dc0') {
+        changeToDC0();
+    }
+    else if (marker.id === 'ez0') {
+        changeToEZ0();
+    }
+    else if (marker.id === 'ez2') {
+        changeToEZ2();
+    }
+    else if (marker.id === 'sh2') {
+        changeToSH2();
+    }
+    else if (marker.id === 'sh3') {
+        changeToSH3();
+    }
 });
-
-//show or hide 展区列表，默认不显示
+//show or hide 展区列表，
+show_or_hide(); //默认不显示
 function show_or_hide() {
     if (i === true) {
         PSV.getNavbarButton('dt').show();
@@ -352,46 +197,66 @@ function show_or_hide() {
 function changeToDT() {
     PSV.clearMarkers();
     PSV.setPanorama('./panorama/dt.jpg', {
-        longitude: Math.PI,
+        longitude: -3 * Math.PI / 16,
         latitude: 0
     }, true)
         .then(function () {
             PSV.setCaption('大厅 <b>&copy; MCU_电子三庚</b>');
-            PSV.getNavbarButton('dt').disable();
-            PSV.getNavbarButton('dc').enable();
-            PSV.getNavbarButton('ez').enable();
-            PSV.getNavbarButton('qb').enable();
-            PSV.getNavbarButton('fx').enable();
-            PSV.getNavbarButton('sh').enable();
             PSV.addMarker({
-                id: 'ez',
+                id: 'zl0',
                 image: 'point.png',
                 width: 64,
                 height: 64,
                 latitude: -Math.PI / 16,
-                longitude: 5 * Math.PI / 4
+                longitude: 1 * Math.PI / 16
             });
         });
 }
-
 //典藏
 function changeToDC() {
     PSV.clearMarkers();
     PSV.setPanorama('./panorama/dc.jpg', {
-        longitude: 0,
+        longitude: -5 * Math.PI / 16,
         latitude: 0
     }, true)
         .then(function () {
             PSV.setCaption('典藏 <b>&copy; MCU_电子三庚</b>');
-            PSV.getNavbarButton('dc').disable();
-            PSV.getNavbarButton('dt').enable();
-            PSV.getNavbarButton('ez').enable();
-            PSV.getNavbarButton('qb').enable();
-            PSV.getNavbarButton('fx').enable();
-            PSV.getNavbarButton('sh').enable();
+            PSV.addMarker({
+                id: 'dc0',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: - Math.PI / 16,
+                longitude: 11 * Math.PI / 16
+            });
         });
 }
-
+function changeToDC0() {
+    PSV.clearMarkers();
+    PSV.setPanorama('./panorama/dc0.jpg', {
+        longitude: -5 * Math.PI / 16,
+        latitude: 0
+    }, true)
+        .then(function () {
+            PSV.setCaption('典藏 <b>&copy; MCU_电子三庚</b>');
+            PSV.addMarker({
+                id: 'zl1',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: - Math.PI / 16,
+                longitude: 11 * Math.PI / 16
+            });
+            PSV.addMarker({
+                id: 'dc',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: - Math.PI / 16,
+                longitude: -5 * Math.PI / 16
+            });
+        });
+}
 //二展
 function changeToEZ() {
     PSV.clearMarkers();
@@ -401,30 +266,93 @@ function changeToEZ() {
     }, true)
         .then(function () {
             PSV.setCaption('二展 <b>&copy; MCU_电子三庚</b>');
-            PSV.getNavbarButton('ez').disable();
-            PSV.getNavbarButton('dt').enable();
-            PSV.getNavbarButton('dc').enable();
-            PSV.getNavbarButton('qb').enable();
-            PSV.getNavbarButton('fx').enable();
-            PSV.getNavbarButton('sh').enable();
+            PSV.addMarker({
+                id: 'zl0',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: -9 * Math.PI / 16
+            });
+            PSV.addMarker({
+                id: 'ez2',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: -25 * Math.PI / 32
+            });
+            PSV.addMarker({
+                id: 'ez0',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 3 * Math.PI / 16
+            });
         });
 }
-
-//钱币
-function changeToQB() {
+function changeToEZ0() {
     PSV.clearMarkers();
-    PSV.setPanorama('./panorama/qb.jpg', {
+    PSV.setPanorama('./panorama/ez0.jpg', {
+        latitude: 0,
+        longitude: 11 * Math.PI / 16
+    }, true)
+        .then(function () {
+            PSV.setCaption('二展 <b>&copy; MCU_电子三庚</b>');
+            PSV.addMarker({
+                id: 'ez',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: -13 * Math.PI / 16
+            });
+            PSV.addMarker({
+                id: 'sh3',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 7 * Math.PI / 16
+            });
+        });
+}
+function changeToEZ2() {
+    PSV.clearMarkers();
+    PSV.setPanorama('./panorama/ez2.jpg', {
         longitude: 0,
         latitude: 0
     }, true)
         .then(function () {
-            PSV.setCaption('钱币 <b>&copy; MCU_电子三庚</b>');
-            PSV.getNavbarButton('qb').disable();
-            PSV.getNavbarButton('dt').enable();
-            PSV.getNavbarButton('dc').enable();
-            PSV.getNavbarButton('ez').enable();
-            PSV.getNavbarButton('fx').enable();
-            PSV.getNavbarButton('sh').enable();
+            PSV.setCaption('二展 <b>&copy; MCU_电子三庚</b>');
+            PSV.addMarker({
+                id: 'ez',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 4 * Math.PI / 16
+            });
+        });
+}
+//钱币
+function changeToQB() {
+    PSV.clearMarkers();
+    PSV.setPanorama('./panorama/qb.jpg', {
+        longitude: 11 * Math.PI / 16,
+        latitude: 0
+    }, true)
+        .then(function () {
+            PSV.setCaption('书法 <b>&copy; MCU_电子三庚</b>');
+            PSV.addMarker({
+                id: 'sh3',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 9 * Math.PI / 32
+            });
         });
 }
 
@@ -437,12 +365,14 @@ function changeToFX() {
     }, true)
         .then(function () {
             PSV.setCaption('佛像 <b>&copy; MCU_电子三庚</b>');
-            PSV.getNavbarButton('fx').disable();
-            PSV.getNavbarButton('dt').enable();
-            PSV.getNavbarButton('dc').enable();
-            PSV.getNavbarButton('ez').enable();
-            PSV.getNavbarButton('qb').enable();
-            PSV.getNavbarButton('sh').enable();
+            PSV.addMarker({
+                id: 'zl1',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 18 * Math.PI / 16
+            });
         });
 }
 
@@ -450,16 +380,156 @@ function changeToFX() {
 function changeToSH() {
     PSV.clearMarkers();
     PSV.setPanorama('./panorama/sh.jpg', {
+        longitude: 11 * Math.PI / 16,
+        latitude: 0
+    }, true)
+        .then(function () {
+            PSV.setCaption('书画 <b>&copy; MCU_电子三庚</b>');
+            PSV.addMarker({
+                id: 'sh2',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: -9 * Math.PI / 16
+            });
+        });
+}
+function changeToSH2() {
+    PSV.clearMarkers();
+    PSV.setPanorama('./panorama/sh2.jpg', {
         longitude: 0,
         latitude: 0
     }, true)
         .then(function () {
             PSV.setCaption('书画 <b>&copy; MCU_电子三庚</b>');
-            PSV.getNavbarButton('sh').disable();
-            PSV.getNavbarButton('dt').enable();
-            PSV.getNavbarButton('dc').enable();
-            PSV.getNavbarButton('ez').enable();
-            PSV.getNavbarButton('qb').enable();
-            PSV.getNavbarButton('fx').enable();
+            PSV.addMarker({
+                id: 'sh',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 2 * Math.PI / 16
+            });
+            PSV.addMarker({
+                id: 'sh3',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 18 * Math.PI / 16
+            });
+        });
+}
+function changeToSH3() {
+    PSV.clearMarkers();
+    PSV.setPanorama('./panorama/sh3.jpg', {
+        longitude: 0,
+        latitude: 0
+    }, true)
+        .then(function () {
+            PSV.setCaption('书画 <b>&copy; MCU_电子三庚</b>');
+            PSV.addMarker({
+                id: 'qb',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 19 * Math.PI / 16
+            });
+            PSV.addMarker({
+                id: 'sh2',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 7 * Math.PI / 32
+            });
+            PSV.addMarker({
+                id: 'ez0',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: -5 * Math.PI / 16
+            });
+        });
+}
+//走廊
+function changeToZL0() {
+    PSV.clearMarkers();
+    PSV.setPanorama('./panorama/zl0.jpg', {
+        latitude: -Math.PI / 16,
+        longitude: 4 * Math.PI / 16
+    }, true)
+        .then(function () {
+            PSV.setCaption('走廊 <b>&copy; MCU_电子三庚</b>');
+            PSV.addMarker({
+                id: 'zl1',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 4 * Math.PI / 16
+            });
+            PSV.addMarker({
+                id: 'dt',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 20 * Math.PI / 16
+            });
+            PSV.addMarker({
+                id: 'ez',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 7 * Math.PI / 16
+            });
+        });
+}
+function changeToZL1() {
+    PSV.clearMarkers();
+    PSV.setPanorama('./panorama/zl1.jpg', {
+        longitude: 0,
+        latitude: 0
+    }, true)
+        .then(function () {
+            PSV.setCaption('走廊 <b>&copy; MCU_电子三庚</b>');
+            PSV.addMarker({
+                id: 'zl0',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 19 * Math.PI / 16
+            });
+            PSV.addMarker({
+                id: 'dc0',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 0
+            });
+            PSV.addMarker({
+                id: 'fx',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -Math.PI / 16,
+                longitude: 2 * Math.PI / 16
+            });
+            PSV.addMarker({
+                id: 'ez',
+                image: 'point.png',
+                width: 64,
+                height: 64,
+                latitude: -2 * Math.PI / 16,
+                longitude: 17 * Math.PI / 16
+            });
+            // PSV.startGyroscopeControl();    //陀螺仪
         });
 }
