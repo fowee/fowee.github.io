@@ -425,13 +425,18 @@ function changeToSH() {
             PSV.addMarker({
                 id: 'sh_001',
                 name: 'The path',
-                content: document.getElementById('sh_001').innerHTML,
+                content: document.getElementById('sh_001').innerHTML,  
+                // content: '<iframe src="t2.html" style="height:100%;width:100%">',                
                 latitude: 2*Math.PI / 16,
                 longitude: 27 * Math.PI / 32,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
-                anchor: 'bottom center'
+                anchor: 'bottom center',
+                tooltip: {
+                content: '乾隆皇帝造像',
+                position: 'bottom right'
+            }
             });
             if (isPhone) PSV.startGyroscopeControl();
         });
