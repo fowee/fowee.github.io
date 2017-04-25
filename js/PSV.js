@@ -2,23 +2,23 @@ var i = false;        //show_or_hide 控制变量
 var isPhone = false;
 //检测平台,若是android & ios访问就开启陀螺仪
 function checkClinetModel() {
-    //获取请求头中的userAgent
-    var u = navigator.userAgent;
-    //是否是android浏览器
-    var isAndroid = u.indexOf('Android') > -1;
-    //是否是ios浏览器
-    var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-    var msg = '';
-    if (isAndroid) {
-        isPhone = true;   //android
-        console.log('android');
-    } else if (isIos) {
-        isPhone = true;   //ios
-        console.log('ios');
-    } else {
-        isPhone = false;  //PC
-        console.log('PC');
-    };
+        //获取请求头中的userAgent
+        var u = navigator.userAgent;
+        //是否是android浏览器
+        var isAndroid = u.indexOf('Android') > -1;
+        //是否是ios浏览器
+        var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+        var msg = '';
+        if (isAndroid) {
+            isPhone = true;   //android         
+            console.log('android');
+        } else if (isIos) {
+            isPhone = true;   //ios   
+            console.log('ios');
+        } else {
+            isPhone = false;  //PC
+            console.log('PC');
+        };
 };
 checkClinetModel();
 var PSV = new PhotoSphereViewer({
@@ -429,7 +429,7 @@ function changeToSH() {
 function changeToSH2() {
     PSV.clearMarkers();
     PSV.setPanorama('./panorama/sh2.jpg', {
-        longitude: 0,
+        longitude: 6 * Math.PI / 16,
         latitude: 0
     }, true)
         .then(function () {
@@ -440,7 +440,7 @@ function changeToSH2() {
                 width: 64,
                 height: 64,
                 latitude: -Math.PI / 16,
-                longitude: 2 * Math.PI / 16
+                longitude: 5 * Math.PI / 16
             });
             PSV.addMarker({
                 id: 'sh3',
@@ -448,7 +448,7 @@ function changeToSH2() {
                 width: 64,
                 height: 64,
                 latitude: -Math.PI / 16,
-                longitude: 18 * Math.PI / 16
+                longitude: 21 * Math.PI / 16
             });
             if (isPhone) PSV.startGyroscopeControl();
         });
