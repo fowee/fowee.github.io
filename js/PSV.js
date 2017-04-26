@@ -425,8 +425,8 @@ function changeToSH() {
             PSV.addMarker({
                 id: 'sh_001',
                 name: 'The path',
-                content: document.getElementById('sh_001').innerHTML,  
-                // content: '<iframe src="t2.html" style="height:100%;width:100%">',                
+                // content: document.getElementById('sh_001').innerHTML,  
+                content: '<iframe src="t2.html" style="height:100%;width:100%">',                
                 latitude: 2*Math.PI / 16,
                 longitude: 27 * Math.PI / 32,
                 image: 'pin2.png',
