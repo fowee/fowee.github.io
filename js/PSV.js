@@ -110,17 +110,31 @@ var PSV = new PhotoSphereViewer({
     },
     markers: (function () {      //测试markers
         var a = [];
-        a.push({
-            id: 'the-path',
-            name: 'The path',
-            content: '<img src="pin2.png" style="width:100%"/><img src="pin.png" style="width:100%"/>',
-            x: 3900,
-            y: 1650,
-            image: 'pin2.png',
-            width: 32,
-            height: 32,
-            anchor: 'bottom center'
-        });
+        // a.push({
+        //     id: 'the-path',
+        //     name: 'The path',
+        //     content: '<img src="pin2.png" style="width:100%"/><img src="pin.png" style="width:100%"/>',
+        //     x: 3900,
+        //     y: 1650,
+        //     image: 'pin2.png',
+        //     width: 32,
+        //     height: 32,
+        //     anchor: 'bottom center'
+        // });
+        // a.push({
+        //     id: 'lorem',
+        //     tooltip: {
+        //         content: 'Lorem ipsum dolor ist amet et consecturo.',
+        //         position: 'bottom right'
+        //     },
+        //     content: document.getElementById('pin-content').innerHTML,
+        //     latitude: 0,
+        //     longitude: 0.20,
+        //     image: 'pin2.png',
+        //     width: 32,
+        //     height: 32,
+        //     anchor: 'bottom center'
+        // });
         a.push({
             id: 'dt',
             image: 'point.png',
@@ -128,20 +142,6 @@ var PSV = new PhotoSphereViewer({
             height: 64,
             latitude: -Math.PI / 16,
             longitude: 0
-        });
-        a.push({
-            id: 'lorem',
-            tooltip: {
-                content: 'Lorem ipsum dolor ist amet et consecturo.',
-                position: 'bottom right'
-            },
-            content: document.getElementById('pin-content').innerHTML,
-            latitude: 0,
-            longitude: 0.20,
-            image: 'pin2.png',
-            width: 32,
-            height: 32,
-            anchor: 'bottom center'
         });
         return a;
     } ())
@@ -426,7 +426,7 @@ function changeToSH() {
                 id: 'sh_001',
                 name: 'The path',
                 // content: document.getElementById('sh_001').innerHTML,  
-                content: '<iframe src="../zp/sh_001.html" style="height:100%;width:100%">',                
+                content: '<iframe src="../zp/csh_001.html" style="height:100%;width:100%">',                
                 latitude: 2*Math.PI / 16,
                 longitude: 27 * Math.PI / 32,
                 image: 'pin2.png',
