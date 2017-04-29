@@ -363,7 +363,7 @@ function changeToEZ2() {
             if (isPhone) PSV.startGyroscopeControl();
         });
 }
-//钱币
+//书法（代替原钱币）
 function changeToQB() {
     PSV.clearMarkers();
     PSV.setPanorama('./panorama/qb.jpg', {
@@ -401,6 +401,66 @@ function changeToFX() {
                 latitude: -Math.PI / 16,
                 longitude: 18 * Math.PI / 16
             });
+            PSV.addMarker({
+                id: 'fx_001',
+                name: 'The path',
+                content: '<iframe src="../zp/cfx_001.html" style="height:100%;width:100%">',                
+                latitude: -3*Math.PI / 32,
+                longitude: 23 * Math.PI / 64,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                content: '观音菩萨雕像',
+                position: 'bottom right'
+            }
+        });
+        PSV.addMarker({
+                id: 'fx_002',
+                name: 'The path',
+                content: '<iframe src="../zp/cfx_002.html" style="height:100%;width:100%">',                
+                latitude: -5*Math.PI / 64,
+                longitude: 23 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                content: '千手观音铜像',
+                position: 'bottom right'
+            }
+        });
+        PSV.addMarker({
+                id: 'fx_003',
+                name: 'The path',
+                content: '<iframe src="../zp/cfx_003.html" style="height:100%;width:100%">',                
+                latitude: -8*Math.PI / 64,
+                longitude: 87 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                content: '观音雕像',
+                position: 'bottom right'
+            }
+        });
+        PSV.addMarker({
+                id: 'fx_004',
+                name: 'The path',
+                content: '<iframe src="../zp/cfx_004.html" style="height:100%;width:100%">',                
+                latitude: -5*Math.PI / 64,
+                longitude: 12 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                content: '佛陀头像',
+                position: 'bottom right'
+            }
+        });
             if (isPhone) PSV.startGyroscopeControl();
         });
 }
@@ -437,7 +497,55 @@ function changeToSH() {
                 content: '乾隆皇帝造像',
                 position: 'bottom right'
             }
-            });
+        });
+        PSV.addMarker({
+                id: 'sh_002',
+                name: 'The path',
+                // content: document.getElementById('sh_001').innerHTML,  
+                content: '<iframe src="../zp/csh_002.html" style="height:100%;width:100%">',                
+                latitude: 2*Math.PI / 16,
+                longitude: 34 * Math.PI / 32,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                content: '福寿',
+                position: 'bottom right'
+            }
+        });
+        PSV.addMarker({
+                id: 'sh_003',
+                name: 'The path',
+                // content: document.getElementById('sh_001').innerHTML,  
+                content: '<iframe src="../zp/csh_003.html" style="height:100%;width:100%">',                
+                latitude: 1*Math.PI / 16,
+                longitude: 41 * Math.PI / 32,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                content: '高行清粹',
+                position: 'bottom right'
+            }
+        });
+        PSV.addMarker({
+                id: 'sh_004',
+                name: 'The path',
+                // content: document.getElementById('sh_001').innerHTML,  
+                content: '<iframe src="../zp/csh_004.html" style="height:100%;width:100%">',                
+                latitude: 2*Math.PI / 16,
+                longitude: 16 * Math.PI / 32,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                content: '状元及弟',
+                position: 'bottom right'
+            }
+        });
             if (isPhone) PSV.startGyroscopeControl();
         });
 }
