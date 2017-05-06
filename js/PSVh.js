@@ -117,7 +117,7 @@ var PSV = new PhotoSphereViewer({
             image: 'point.png',
             width: 64,
             height: 64,
-            latitude: -Math.PI / 16,
+            latitude: -5*Math.PI / 32,
             longitude: 0
         });
         return a;
