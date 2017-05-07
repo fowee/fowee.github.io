@@ -115,11 +115,11 @@ var PSV = new PhotoSphereViewer({
             image: 'point.png',
             width: 64,
             height: 64,
-            latitude: -5*Math.PI / 32,
+            latitude: -5 * Math.PI / 32,
             longitude: 0
         });
         return a;
-    } ())
+    }())
 });
 PSV.on('select-marker', function (marker) {
     if (marker.data && marker.data.deletable) {
@@ -380,66 +380,141 @@ function changeToFX() {
                 id: 'fx_001',
                 name: 'The path',
                 // content: document.getElementById('sh_001').innerHTML,  
-                content: '<iframe src="../zp/efx_001.html" style="height:100%;width:100%">',                
-                latitude: -3*Math.PI / 32,
+                content: '<iframe src="../zp/efx_001.html" style="height:100%;width:100%">',
+                latitude: -3 * Math.PI / 32,
                 longitude: 23 * Math.PI / 64,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: 'Guanyin statue of Buddha',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: 'Guanyin statue of Buddha',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'fx_002',
                 name: 'The path',
                 // content: document.getElementById('sh_001').innerHTML,  
-                content: '<iframe src="../zp/efx_002.html" style="height:100%;width:100%">',                
-                latitude: -5*Math.PI / 64,
+                content: '<iframe src="../zp/efx_002.html" style="height:100%;width:100%">',
+                latitude: -5 * Math.PI / 64,
                 longitude: 23 * Math.PI / 128,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: 'Thousand Goddess of Mercy',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: 'Thousand Goddess of Mercy',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'fx_003',
                 name: 'The path',
                 // content: document.getElementById('sh_001').innerHTML,  
-                content: '<iframe src="../zp/efx_003.html" style="height:100%;width:100%">',                
-                latitude: -8*Math.PI / 64,
+                content: '<iframe src="../zp/efx_003.html" style="height:100%;width:100%">',
+                latitude: -8 * Math.PI / 64,
                 longitude: 87 * Math.PI / 128,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: 'Guanyin statue',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: 'Guanyin statue',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'fx_004',
                 name: 'The path',
                 // content: document.getElementById('sh_001').innerHTML,  
-                content: '<iframe src="../zp/efx_004.html" style="height:100%;width:100%">',                
-                latitude: -5*Math.PI / 64,
+                content: '<iframe src="../zp/efx_004.html" style="height:100%;width:100%">',
+                latitude: -5 * Math.PI / 64,
                 longitude: 12 * Math.PI / 128,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: 'statue of Buddha head',
-                position: 'bottom right'
-            }
-        });
+                    content: 'statue of Buddha head',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
+                id: 'fx_010',
+                name: 'The path',
+                content: '<iframe src="../zp/efx_010.html" style="height:100%;width:100%">',
+                latitude: -7 * Math.PI / 64,
+                longitude: -23 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                    content: 'Thought Bodhisattva',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
+                id: 'fx_011',
+                name: 'The path',
+                content: '<iframe src="../zp/efx_011.html" style="height:100%;width:100%">',
+                latitude: -11 * Math.PI / 128,
+                longitude: 120 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                    content: 'Guanyin',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
+                id: 'fx_012',
+                name: 'The path',
+                content: '<iframe src="../zp/efx_012.html" style="height:100%;width:100%">',
+                latitude: -6 * Math.PI / 64,
+                longitude: -8 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                    content: 'Buddha statue',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
+                id: 'fx_013',
+                name: 'The path',
+                content: '<iframe src="../zp/efx_013.html" style="height:100%;width:100%">',
+                latitude: -11 * Math.PI / 128,
+                longitude: 1 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                    content: 'Guanyin',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
+                id: 'fx_014',
+                name: 'The path',
+                content: '<iframe src="../zp/efx_014.html" style="height:100%;width:100%">',
+                latitude: -7 * Math.PI / 64,
+                longitude: -53 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                    content: 'Buddha head',
+                    position: 'bottom right'
+                }
+            });
             if (isPhone) PSV.startGyroscopeControl();
         });
 }
@@ -464,63 +539,63 @@ function changeToSH() {
             PSV.addMarker({
                 id: 'sh_001',
                 name: 'The path',
-                content: '<iframe src="../zp/esh_001.html" style="height:100%;width:100%">',                
-                latitude: 2*Math.PI / 16,
+                content: '<iframe src="../zp/esh_001.html" style="height:100%;width:100%">',
+                latitude: 2 * Math.PI / 16,
                 longitude: 27 * Math.PI / 32,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: 'Painting of Emperor Qianlong',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: 'Painting of Emperor Qianlong',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'sh_002',
                 name: 'The path',
-                content: '<iframe src="../zp/esh_002.html" style="height:100%;width:100%">',                
-                latitude: 2*Math.PI / 16,
+                content: '<iframe src="../zp/esh_002.html" style="height:100%;width:100%">',
+                latitude: 2 * Math.PI / 16,
                 longitude: 34 * Math.PI / 32,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: 'Fortune and Longevity',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: 'Fortune and Longevity',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'sh_003',
                 name: 'The path',
-                content: '<iframe src="../zp/esh_003.html" style="height:100%;width:100%">',                
-                latitude: 1*Math.PI / 16,
+                content: '<iframe src="../zp/esh_003.html" style="height:100%;width:100%">',
+                latitude: 1 * Math.PI / 16,
                 longitude: 41 * Math.PI / 32,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: 'High level of Excellence and Respect',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: 'High level of Excellence and Respect',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'sh_004',
                 name: 'The path',
-                content: '<iframe src="../zp/esh_004.html" style="height:100%;width:100%">',                
-                latitude: 2*Math.PI / 16,
+                content: '<iframe src="../zp/esh_004.html" style="height:100%;width:100%">',
+                latitude: 2 * Math.PI / 16,
                 longitude: 16 * Math.PI / 32,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: 'Man You Pass an Imperial Exam',
-                position: 'bottom right'
-            }
-        });
+                    content: 'Man You Pass an Imperial Exam',
+                    position: 'bottom right'
+                }
+            });
             if (isPhone) PSV.startGyroscopeControl();
         });
 }

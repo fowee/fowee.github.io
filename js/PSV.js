@@ -110,41 +110,16 @@ var PSV = new PhotoSphereViewer({
     },
     markers: (function () {      //测试markers
         var a = [];
-        // a.push({
-        //     id: 'the-path',
-        //     name: 'The path',
-        //     content: '<img src="pin2.png" style="width:100%"/><img src="pin.png" style="width:100%"/>',
-        //     x: 3900,
-        //     y: 1650,
-        //     image: 'pin2.png',
-        //     width: 32,
-        //     height: 32,
-        //     anchor: 'bottom center'
-        // });
-        // a.push({
-        //     id: 'lorem',
-        //     tooltip: {
-        //         content: 'Lorem ipsum dolor ist amet et consecturo.',
-        //         position: 'bottom right'
-        //     },
-        //     content: document.getElementById('pin-content').innerHTML,
-        //     latitude: 0,
-        //     longitude: 0.20,
-        //     image: 'pin2.png',
-        //     width: 32,
-        //     height: 32,
-        //     anchor: 'bottom center'
-        // });
         a.push({
             id: 'dt',
             image: 'point.png',
             width: 64,
             height: 64,
-            latitude: -5*Math.PI / 32,
+            latitude: -5 * Math.PI / 32,
             longitude: 0
         });
         return a;
-    } ())
+    }())
 });
 PSV.on('select-marker', function (marker) {
     if (marker.data && marker.data.deletable) {
@@ -404,63 +379,138 @@ function changeToFX() {
             PSV.addMarker({
                 id: 'fx_001',
                 name: 'The path',
-                content: '<iframe src="../zp/cfx_001.html" style="height:100%;width:100%">',                
-                latitude: -3*Math.PI / 32,
+                content: '<iframe src="../zp/cfx_001.html" style="height:100%;width:100%">',
+                latitude: -3 * Math.PI / 32,
                 longitude: 23 * Math.PI / 64,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: '观音菩萨雕像',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: '观音菩萨雕像',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'fx_002',
                 name: 'The path',
-                content: '<iframe src="../zp/cfx_002.html" style="height:100%;width:100%">',                
-                latitude: -5*Math.PI / 64,
+                content: '<iframe src="../zp/cfx_002.html" style="height:100%;width:100%">',
+                latitude: -5 * Math.PI / 64,
                 longitude: 23 * Math.PI / 128,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: '千手观音铜像',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: '千手观音铜像',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'fx_003',
                 name: 'The path',
-                content: '<iframe src="../zp/cfx_003.html" style="height:100%;width:100%">',                
-                latitude: -8*Math.PI / 64,
+                content: '<iframe src="../zp/cfx_003.html" style="height:100%;width:100%">',
+                latitude: -8 * Math.PI / 64,
                 longitude: 87 * Math.PI / 128,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: '观音雕像',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: '观音雕像',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'fx_004',
                 name: 'The path',
-                content: '<iframe src="../zp/cfx_004.html" style="height:100%;width:100%">',                
-                latitude: -5*Math.PI / 64,
+                content: '<iframe src="../zp/cfx_004.html" style="height:100%;width:100%">',
+                latitude: -5 * Math.PI / 64,
                 longitude: 12 * Math.PI / 128,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: '佛陀头像',
-                position: 'bottom right'
-            }
-        });
+                    content: '佛陀头像',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
+                id: 'fx_010',
+                name: 'The path',
+                content: '<iframe src="../zp/cfx_010.html" style="height:100%;width:100%">',
+                latitude: -7 * Math.PI / 64,
+                longitude: -23 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                    content: '思惟菩萨',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
+                id: 'fx_011',
+                name: 'The path',
+                content: '<iframe src="../zp/cfx_011.html" style="height:100%;width:100%">',
+                latitude: -11 * Math.PI / 128,
+                longitude: 120 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                    content: '观音菩萨',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
+                id: 'fx_012',
+                name: 'The path',
+                content: '<iframe src="../zp/cfx_012.html" style="height:100%;width:100%">',
+                latitude: -6 * Math.PI / 64,
+                longitude: -8 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                    content: '双佛立像',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
+                id: 'fx_013',
+                name: 'The path',
+                content: '<iframe src="../zp/cfx_013.html" style="height:100%;width:100%">',
+                latitude: -11 * Math.PI / 128,
+                longitude: 1 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                    content: '观音菩萨',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
+                id: 'fx_014',
+                name: 'The path',
+                content: '<iframe src="../zp/cfx_014.html" style="height:100%;width:100%">',
+                latitude: -7 * Math.PI / 64,
+                longitude: -53 * Math.PI / 128,
+                image: 'pin2.png',
+                width: 32,
+                height: 32,
+                anchor: 'bottom center',
+                tooltip: {
+                    content: '佛头',
+                    position: 'bottom right'
+                }
+            });
             if (isPhone) PSV.startGyroscopeControl();
         });
 }
@@ -486,66 +536,66 @@ function changeToSH() {
                 id: 'sh_001',
                 name: 'The path',
                 // content: document.getElementById('sh_001').innerHTML,  
-                content: '<iframe src="../zp/csh_001.html" style="height:100%;width:100%">',                
-                latitude: 2*Math.PI / 16,
+                content: '<iframe src="../zp/csh_001.html" style="height:100%;width:100%">',
+                latitude: 2 * Math.PI / 16,
                 longitude: 27 * Math.PI / 32,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: '乾隆皇帝造像',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: '乾隆皇帝造像',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'sh_002',
                 name: 'The path',
                 // content: document.getElementById('sh_001').innerHTML,  
-                content: '<iframe src="../zp/csh_002.html" style="height:100%;width:100%">',                
-                latitude: 2*Math.PI / 16,
+                content: '<iframe src="../zp/csh_002.html" style="height:100%;width:100%">',
+                latitude: 2 * Math.PI / 16,
                 longitude: 34 * Math.PI / 32,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: '福寿',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: '福寿',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'sh_003',
                 name: 'The path',
                 // content: document.getElementById('sh_001').innerHTML,  
-                content: '<iframe src="../zp/csh_003.html" style="height:100%;width:100%">',                
-                latitude: 1*Math.PI / 16,
+                content: '<iframe src="../zp/csh_003.html" style="height:100%;width:100%">',
+                latitude: 1 * Math.PI / 16,
                 longitude: 41 * Math.PI / 32,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: '高行清粹',
-                position: 'bottom right'
-            }
-        });
-        PSV.addMarker({
+                    content: '高行清粹',
+                    position: 'bottom right'
+                }
+            });
+            PSV.addMarker({
                 id: 'sh_004',
                 name: 'The path',
                 // content: document.getElementById('sh_001').innerHTML,  
-                content: '<iframe src="../zp/csh_004.html" style="height:100%;width:100%">',                
-                latitude: 2*Math.PI / 16,
+                content: '<iframe src="../zp/csh_004.html" style="height:100%;width:100%">',
+                latitude: 2 * Math.PI / 16,
                 longitude: 16 * Math.PI / 32,
                 image: 'pin2.png',
                 width: 32,
                 height: 32,
                 anchor: 'bottom center',
                 tooltip: {
-                content: '状元及弟',
-                position: 'bottom right'
-            }
-        });
+                    content: '状元及弟',
+                    position: 'bottom right'
+                }
+            });
             if (isPhone) PSV.startGyroscopeControl();
         });
 }
